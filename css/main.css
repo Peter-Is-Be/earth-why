@@ -33,6 +33,7 @@ nav {
   height: var(--nav-height);
   align-items: center;
   padding: 0 16px;
+  border-bottom: 1px solid var(--primary-color);
 }
 nav .logo {
   color: #2c1810;
@@ -88,7 +89,7 @@ nav ul li a.menu.active:hover {
   flex-wrap: wrap;
 }
 .books {
-  margin: 32px 24px 24px 24px;
+  margin: 64px 24px 64px 24px;
   max-width: 1200px;
   flex: 1 1 auto;
   display: flex;
