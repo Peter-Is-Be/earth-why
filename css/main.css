@@ -5,7 +5,8 @@
   --accent-second-color: #f5b95e;
   --text-color: #2c1810;
   --sedond-text-color: #91857e;
-  --nav-height: 64px;
+  --menu-bg-color: #141d2e;
+  --nav-height: 88px;
   --card-width: 360px;
   --card-height: 520px;
 }
@@ -27,22 +28,26 @@ h1 {
 
 /* #region 导航 web */
 nav {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: var(--nav-height);
   align-items: center;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--primary-color);
+  background-color: var(--menu-bg-color);
 }
 nav .logo {
   color: #2c1810;
   font-size: 18px;
   font-weight: bold;
   padding: 8px 16px;
-  margin: 0 8px;
+  margin: 0 24px;
   background-color: white;
   text-decoration: none;
+  z-index: 1;
+}
+nav .pad {
+  flex: 1 1 auto;
 }
 nav ul {
   display: flex;
@@ -50,6 +55,7 @@ nav ul {
   height: 100%;
   position: relative;
   align-items: center;
+  z-index: 1;
 }
 nav ul li {
   position: relative;
@@ -61,7 +67,7 @@ nav ul li {
 nav ul li a.menu {
   display: block;
   text-decoration: none;
-  color: #2c1810;
+  color: #fff;
   font-size: 18px;
   font-weight: bold;
   border-radius: 32px;
@@ -90,25 +96,29 @@ nav ul li a.menu.active:hover {
 }
 .books {
   margin: 64px 24px 64px 24px;
-  max-width: 1200px;
+  max-width: 1600px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .card-list {
   --gap: 32px;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  flex-direction: row;
+  justify-content: center;
 }
 .card-list .card {
   margin: var(--gap) 0 0 var(--gap);
   background-color: white;
   position: relative;
   width: var(--card-width);
+  max-width: calc(100vw - 64px);
   max-height: var(--card-height);
-  border-radius: 16px;
+  border-radius: 24px;
   cursor: pointer;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.521);
   overflow: hidden;
@@ -135,7 +145,10 @@ nav ul li a.menu.active:hover {
 }
 
 .card-list .card .desc {
-  padding: 24px;
+  margin: 24px;
+  max-height: 232px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-list .card .book-name {
   text-align: center;
@@ -145,8 +158,23 @@ nav ul li a.menu.active:hover {
   font-size: 1.5em;
 }
 .card-list .card .book-desc {
-  margin-top: 8px;
+  margin-top: 16px;
   color: var(--sedond-text-color);
   font-size: 1em;
 }
 /* #endregion book list cards style */
+
+@media screen and (max-width: 900px) {
+  nav .logo {
+    margin: 0 8px;
+  }
+  .books {
+    margin: 24px 8px 8px 8px;
+  }
+  .card-list {
+    --gap: 24px;
+  }
+  .card-list .card {
+    max-width: calc(100vw - 48px);
+  }
+}
