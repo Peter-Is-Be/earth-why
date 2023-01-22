@@ -1,0 +1,151 @@
+:root {
+  --primary-color: #f2e4cf;
+  --second-color: #f8f3ed;
+  --accent-color: #daaa63;
+  --accent-second-color: #f5b95e;
+  --text-color: #2c1810;
+  --sedond-text-color: #91857e;
+  --nav-height: 64px;
+  --card-width: 360px;
+  --card-height: 520px;
+}
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background-color: var(--second-color);
+}
+h1 {
+  color: red;
+}
+
+/* #region 导航 web */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: var(--nav-height);
+  align-items: center;
+  padding: 0 16px;
+}
+nav .logo {
+  color: #2c1810;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 16px;
+  margin: 0 8px;
+  background-color: white;
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+  align-items: center;
+}
+nav ul li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+nav ul li a.menu {
+  display: block;
+  text-decoration: none;
+  color: #2c1810;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 32px;
+  padding: 8px 16px;
+  margin: 0 8px;
+}
+nav ul li a.menu.active {
+  background-color: var(--accent-color);
+}
+nav ul li a.menu:hover {
+  background-color: var(--accent-second-color);
+}
+nav ul li a.menu.active:hover {
+  background-color: var(--accent-second-color);
+}
+/* #endregion 导航 web */
+
+/* 导航 mobile */
+
+/* #region book list cards style */
+.main-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.books {
+  margin: 32px 24px 24px 24px;
+  max-width: 1200px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.card-list {
+  --gap: 32px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+}
+.card-list .card {
+  margin: var(--gap) 0 0 var(--gap);
+  background-color: white;
+  position: relative;
+  width: var(--card-width);
+  max-height: var(--card-height);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.521);
+  overflow: hidden;
+  transition: 0.35s;
+}
+.card-list .card:hover {
+  box-shadow: 6px 8px 16px 2px rgba(0, 0, 0, 0.521);
+}
+
+.card-list .card .cover {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-list .card .cover img {
+  height: 240px;
+  width: 360px;
+  object-fit: cover;
+  transition: 0.35s;
+}
+.card-list .card:hover .cover img {
+  transform: scale(1.05);
+}
+
+.card-list .card .desc {
+  padding: 24px;
+}
+.card-list .card .book-name {
+  text-align: center;
+}
+.card-list .card .book-name h1 {
+  color: var(--text-color);
+  font-size: 1.5em;
+}
+.card-list .card .book-desc {
+  margin-top: 8px;
+  color: var(--sedond-text-color);
+  font-size: 1em;
+}
+/* #endregion book list cards style */
