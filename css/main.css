@@ -3,12 +3,13 @@
   --second-color: #f8f3ed;
   --accent-color: #daaa63;
   --accent-second-color: #f5b95e;
-  --text-color: #2c1810;
+  --text-color: #3a180b;
   --sedond-text-color: #91857e;
   --menu-bg-color: #141d2e;
   --nav-height: 88px;
   --card-width: 360px;
   --card-height: 520px;
+  --link-color: #bf7200;
 }
 html,
 body,
@@ -23,7 +24,7 @@ body {
   background-color: var(--second-color);
 }
 h1 {
-  color: red;
+  color: var(--text-color);
 }
 
 /* #region 导航 web */
@@ -94,7 +95,7 @@ nav ul li a.menu.active:hover {
   justify-content: center;
   flex-wrap: wrap;
 }
-.books {
+.main-content {
   margin: 64px 24px 64px 24px;
   max-width: 1600px;
   flex: 1 1 auto;
@@ -123,6 +124,7 @@ nav ul li a.menu.active:hover {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.521);
   overflow: hidden;
   transition: 0.35s;
+  text-decoration: none;
 }
 .card-list .card:hover {
   box-shadow: 6px 8px 16px 2px rgba(0, 0, 0, 0.521);
@@ -164,11 +166,24 @@ nav ul li a.menu.active:hover {
 }
 /* #endregion book list cards style */
 
+/* #region common styles */
+.link-open-new {
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--link-color);
+}
+.link-open-new:hover {
+  text-decoration: none;
+  text-decoration: underline;
+}
+/* #endregion common styles */
+
 @media screen and (max-width: 900px) {
   nav .logo {
     margin: 0 8px;
   }
-  .books {
+  .main-content {
     margin: 24px 8px 8px 8px;
   }
   .card-list {
