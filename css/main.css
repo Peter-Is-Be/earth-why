@@ -46,6 +46,18 @@ nav .logo {
   background-color: white;
   text-decoration: none;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 6px solid #0e787c;
+  box-shadow: inset 0 0 4px 1px #0000006e, 0 0 4px 1px #00c2e1;
+  border-radius: 4px;
+}
+nav a.logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  margin-right: 8px;
 }
 nav .pad {
   flex: 1 1 auto;
