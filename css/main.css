@@ -5,7 +5,7 @@
   --accent-second-color: #f5b95e;
   --text-color: #3a180b;
   --sedond-text-color: #91857e;
-  --menu-bg-color: #141d2e;
+  --menu-bg-color: black;
   --nav-height: 88px;
   --card-width: 360px;
   --card-height: 520px;
@@ -49,8 +49,7 @@ nav .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 6px solid #0e787c;
-  box-shadow: inset 0 0 4px 1px #0000006e, 0 0 4px 1px #00c2e1;
+  box-shadow: inset 0 0 4px 1px #0000002b;
   border-radius: 4px;
 }
 nav a.logo img {
