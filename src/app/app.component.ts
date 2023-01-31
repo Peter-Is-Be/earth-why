@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {NavigationEnd, Router} from "@angular/router";
+import {filter} from "rxjs";
 import {environment} from "src/environments/environment";
 import {ThemeService} from "./core/services/theme.service";
 
@@ -15,12 +17,12 @@ export class AppComponent {
   showFiller = false;
 
   mainMenuList = [
-    {name: "佛", link: "buddha", icon: "temple_buddhist", active: true},
+    {name: "佛", link: "buddha", icon: "temple_buddhist", active: false},
     {name: "道", link: "tao", icon: "all_inclusive", active: false},
     {name: "外星文明", link: "alien", icon: "outlet", active: false},
     {name: "地球文明", link: "earth", icon: "public", active: false},
   ];
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
     this.themeService.getThemeClass().subscribe((_themeClass: string) => {
       this.themeClass = _themeClass;
     });
@@ -28,16 +30,28 @@ export class AppComponent {
     this.themeService.getThemeModel().subscribe((_themeModel: string) => {
       this.themeModel = _themeModel;
     });
+
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        console.log(event.url);
+        this.mainMenuList.forEach((menu: any) => {
+          if (event.url.includes(menu.link)) {
+            menu.active = true;
+          } else {
+            menu.active = false;
+          }
+        });
+      });
   }
 
-  activeMenu(menu: any) {
-    this.mainMenuList.forEach((menu: any) => {
-      menu.active = false;
-    });
-    menu.active = true;
-  }
   pickTheme(themeClass: string) {
     this.themeService.setThemeClass(themeClass);
+
+    // 设置浏览器的主题颜色
+    const ogColor = document
+      .querySelector('meta[name="theme-color"]')
+      ?.getAttribute("content");
   }
 
   setThemeModel(themeModel: string) {

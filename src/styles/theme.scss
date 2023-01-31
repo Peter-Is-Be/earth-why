@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "@angular/material" as mat;
 @include mat.core();
 // 生成网站：http://mcg.mbitson.com
@@ -404,7 +405,7 @@ $md-blue-warn: (
 );
 // #endregion 蓝色 color token
 
-/* For use in src/lib/core/theming/_palette.scss */
+// #region dark warn palette
 $md-dark-warn: (
   50: #fff0f0,
   100: #ffdada,
@@ -437,6 +438,7 @@ $md-dark-warn: (
     A700: #000000,
   ),
 );
+// #endregion dark warn palette
 
 // #endregion color token
 
@@ -547,6 +549,8 @@ $app-dark-blue-theme: mat.define-dark-theme(
       .app-#{$prefix}-#{$key} {
         color: map-get($palette, $key);
       }
+
+      // e.g: .app-bg-primary-100, .app-bg-accent-500
       .app-bg-#{$prefix}-#{$key} {
         background-color: map-get($palette, $key);
       }
@@ -580,8 +584,23 @@ $menu-underline-color-light: #3a3a3a;
 $menu-underline-color-dark: #ddd;
 
 .app-pink-theme {
+  @include generate-app-pink-classes;
+
+  // 目录链接颜色(突出显示文字和背景)
+  .content a {
+    color: mat.get-color-from-palette($app-light-pink-primary, 900);
+  }
+  .stress,
+  .dir .item.active {
+    background-color: color.adjust(
+      mat.get-color-from-palette($app-light-pink-primary, 900),
+      $alpha: -0.9
+    );
+
+    color: mat.get-color-from-palette($app-light-pink-primary, 900);
+  }
+
   &.light-model {
-    @include generate-app-pink-classes;
     @include mat.all-component-colors($app-light-pink-theme);
     .mat-toolbar {
       background-color: mat.get-color-from-palette(
@@ -589,6 +608,7 @@ $menu-underline-color-dark: #ddd;
         100
       );
     }
+    // 主菜单颜色
     .menu-link.active {
       color: mat.get-color-from-palette($app-light-pink-primary, 900);
     }
@@ -599,6 +619,7 @@ $menu-underline-color-dark: #ddd;
       );
     }
   }
+
   &.dark-model {
     @include mat.all-component-colors($app-dark-pink-theme);
     .menu-link::after {
@@ -613,8 +634,22 @@ $menu-underline-color-dark: #ddd;
   @include generateColors(warning, $app-light-green-warn);
 }
 .app-green-theme {
+  @include generate-app-green-classes;
+
+  // 目录链接颜色(突出显示文字和背景)
+  .content a {
+    color: mat.get-color-from-palette($app-light-green-primary, 900);
+  }
+  .stress,
+  .dir .item.active {
+    background-color: color.adjust(
+      mat.get-color-from-palette($app-light-green-primary, 900),
+      $alpha: -0.9
+    );
+    color: mat.get-color-from-palette($app-light-green-primary, 900);
+  }
+
   &.light-model {
-    @include generate-app-green-classes;
     @include mat.all-component-colors($app-light-green-theme);
     .mat-toolbar {
       background-color: mat.get-color-from-palette(
@@ -622,7 +657,6 @@ $menu-underline-color-dark: #ddd;
         100
       );
     }
-
     .menu-link.active {
       color: mat.get-color-from-palette($app-light-green-primary, 900);
     }
@@ -633,6 +667,7 @@ $menu-underline-color-dark: #ddd;
       );
     }
   }
+
   &.dark-model {
     @include mat.all-component-colors($app-dark-green-theme);
     .menu-link::after {
@@ -647,8 +682,22 @@ $menu-underline-color-dark: #ddd;
   @include generateColors(warning, $app-light-yellow-warn);
 }
 .app-yellow-theme {
+  @include generate-app-yellow-classes;
+
+  // 目录链接颜色(突出显示文字和背景)
+  .content a {
+    color: mat.get-color-from-palette($app-light-yellow-primary, 900);
+  }
+  .stress,
+  .dir .item.active {
+    background-color: color.adjust(
+      mat.get-color-from-palette($app-light-yellow-primary, 900),
+      $alpha: -0.9
+    );
+    color: mat.get-color-from-palette($app-light-yellow-primary, 900);
+  }
+
   &.light-model {
-    @include generate-app-yellow-classes;
     @include mat.all-component-colors($app-light-yellow-theme);
     .mat-toolbar {
       background-color: mat.get-color-from-palette(
@@ -666,6 +715,7 @@ $menu-underline-color-dark: #ddd;
       );
     }
   }
+
   &.dark-model {
     @include mat.all-component-colors($app-dark-yellow-theme);
     .menu-link::after {
@@ -680,8 +730,22 @@ $menu-underline-color-dark: #ddd;
   @include generateColors(warning, $app-light-blue-warn);
 }
 .app-blue-theme {
+  @include generate-app-blue-classes;
+
+  // 目录链接颜色(突出显示文字和背景)
+  .content a {
+    color: mat.get-color-from-palette($app-light-blue-primary, 900);
+  }
+  .stress,
+  .dir .item.active {
+    background-color: color.adjust(
+      mat.get-color-from-palette($app-light-blue-primary, 900),
+      $alpha: -0.9
+    );
+    color: mat.get-color-from-palette($app-light-blue-primary, 900);
+  }
+
   &.light-model {
-    @include generate-app-blue-classes;
     @include mat.all-component-colors($app-light-blue-theme);
     .mat-toolbar {
       background-color: mat.get-color-from-palette(
@@ -733,6 +797,3 @@ $menu-underline-color-dark: #ddd;
 // .darkMode {
 //   @include mat.all-component-colors($angular-dark-theme);
 // }
-
-// 变量定义
-$nav-height: 64px; // 导航菜单bar的高度

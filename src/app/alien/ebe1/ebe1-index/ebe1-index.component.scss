@@ -1,0 +1,147 @@
+@import "../../../../styles/constants.scss";
+
+.close-btn-wrap {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex-direction: row;
+  justify-content: flex-end;
+  .close-btn {
+    background-color: rgb(128 128 128 / 20%);
+  }
+}
+
+.directory {
+  position: relative;
+  h3 {
+    text-align: center;
+    margin: 16px;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dir a.item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 16px;
+    border-radius: 0;
+  }
+}
+
+.content {
+  padding: 16px;
+  height: calc(100vh - $nav-height);
+  &.mobile {
+    height: calc(100vh - $nav-height - $bottom-nav-height);
+  }
+}
+
+.reprint-note {
+  background-color: rgba(139, 139, 139, 0.1294117647);
+  padding: 8px;
+  margin-top: 64px;
+  border: 1px solid rgba(128, 128, 128, 0.1294117647);
+  font-size: 12px;
+  text-align: center;
+}
+
+::ng-deep {
+  .dark-model .annotate {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #aaaaaa;
+  }
+
+  .light-model .annotate {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #7e7e7e;
+  }
+
+  p {
+    text-indent: 2em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1em;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .KaiTi {
+    font-family: "楷体";
+  }
+}
+
+.bottom-bar {
+  position: fixed;
+  width: 100%;
+  height: $bottom-nav-height;
+  display: flex;
+  bottom: 0;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  .title {
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .book-name {
+      font-size: 14px;
+      line-height: 14px;
+      padding: 8px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .chapt-name {
+      font-size: 12px;
+      line-height: 12px;
+      opacity: 0.8;
+      padding: 0 8px 8px 8px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    .directory {
+      flex: 1 0 auto;
+      min-width: 200px;
+      max-width: 400px;
+    }
+    .content {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    .content {
+      flex: 1 1 auto;
+    }
+  }
+}

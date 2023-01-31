@@ -67,6 +67,7 @@ body {
   }
 }
 
+// #region common styles
 @property --p {
   syntax: "<position>";
   inherits: false;
@@ -83,7 +84,6 @@ body {
   --c2: rgba(197, 110, 219, 0.9);
 }
 
-// #region common styles
 .banner {
   display: flex;
   flex-direction: row;
@@ -107,20 +107,9 @@ body {
     --c1: rgb(172, 47, 9, 0.9);
     --c2: rgba(102, 48, 116, 0.9);
     background: radial-gradient(var(--p), var(--c1), var(--c2));
-    animation: to-dark-bg 1s linear 1 forwards, bg-rotate 30s linear infinite;
+    animation: bg-rotate 30s linear infinite;
   }
-  @keyframes to-dark-bg {
-    from {
-      --p: at left;
-      --c1: rgba(255, 86, 34, 0.9);
-      --c2: rgba(197, 110, 219, 0.9);
-    }
-    to {
-      --p: at right;
-      --c1: rgb(172, 47, 9, 0.9);
-      --c2: rgba(102, 48, 116, 0.9);
-    }
-  }
+
   &.light-model::after {
     content: "";
     position: absolute;
@@ -135,19 +124,7 @@ body {
     --c1: rgba(255, 86, 34, 0.8);
     --c2: rgba(197, 110, 219, 0.8);
     background: radial-gradient(var(--c1), var(--c2));
-    animation: to-light-bg 1s linear 1 forwards, bg-rotate 30s linear infinite;
-  }
-  @keyframes to-light-bg {
-    from {
-      --p: at left;
-      --c1: rgb(172, 47, 9, 0.8);
-      --c2: rgba(102, 48, 116, 0.8);
-    }
-    to {
-      --p: at right;
-      --c1: rgba(255, 86, 34, 0.8);
-      --c2: rgba(197, 110, 219, 0.8);
-    }
+    animation: bg-rotate 30s linear infinite;
   }
 
   @keyframes bg-rotate {
