@@ -43,12 +43,15 @@
 }
 
 .reprint-note {
-  background-color: rgba(139, 139, 139, 0.1294117647);
-  padding: 8px;
+  background-color: rgb(139 139 139 / 5%);
+  padding: 24px 8px;
   margin-top: 64px;
-  border: 1px solid rgba(128, 128, 128, 0.1294117647);
+  border: 1px solid rgb(139 139 139 / 6%);
   font-size: 12px;
   text-align: center;
+  color: #919191a6;
+  text-indent: 0;
+  line-height: 2em;
 }
 
 ::ng-deep {
