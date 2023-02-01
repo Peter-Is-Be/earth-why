@@ -1,5 +1,7 @@
 # Earth-Why
 
+# Angular CLI
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
@@ -122,4 +124,4 @@ Your site is live at [Visit Site](https://peter-is-be.github.io/earth-why/)
 
 # markdown
 
-[Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+[Markdown Basic Syntax see:](https://www.markdownguide.org/basic-syntax/)
