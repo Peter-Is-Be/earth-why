@@ -95,7 +95,7 @@ git config --system --list
 
     git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
 
-In my PC
+在我的电脑上当开启狗急VPN时，配置代理：
 
     git config --global http.proxy http://127.0.0.1:18081
    
