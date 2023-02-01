@@ -3,30 +3,37 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
+
     ng serve
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
+
     ng generate component component-name
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
+
     ng build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
+
     ng test
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
+
     ng e2e
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
+
     ng help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 # Github Pages
+
 ## 1. Install *angular-cli-ghpages*
     npm i angular-cli-ghpages --save-dev
 
@@ -35,24 +42,31 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## 2. Config baseUrl
+
 Edit file `angular.json` add `"baseHref": "/Peter-Wang-WebSite/"` to `projects.Peter-Wang-WebSite.architect.build.options`
 
 ## 3. Publish to github pages
+
     ng deploy
+
  This command will build code and push to github with gh-pages branch. When you installed *angular-cli-ghpages*, `ng deploy` will exec `angular-cli-ghpages:deploy`, see:angular.json `"deploy":{"builder": "angular-cli-ghpages:deploy"}`
 
     ng deploy --no-silent
  This command will display more information
 
 ## 4. Setting github pages
+
 Config github pages to `gh-pages` branch. 
 **Wait a minite** and then visite [Peter-Wang-WebSite](https://solarisy.github.io/Peter-Wang-WebSite) will be find page changed.
 
 
 # About SSH Key
+
 ## Checking for existing SSH keys
+
     ls -al ~/.ssh
 ## Remove your SSH public/private keys:
+
     rm ~/.ssh/id_ed25519*
 
 # Git更换账号问题
@@ -63,13 +77,49 @@ Config github pages to `gh-pages` branch.
 
 
 
-I used to have the same error when i change my user email by git config --global user.email and found my solution here: Go to: **Control Panel** -> **User Accounts** -> **Manage your credentials** -> **Windows Credentials**
-
-Under Generic Credentials there are some credentials related to Github, Click on them and click "Remove".
-
-and when you try to push something, you need to login again. hope this will be helpful for you.
+> I used to have the same error when i change my user email by git config --global user.email and found my solution here: Go to: **Control Panel** -> **User Accounts** -> **Manage your credentials** -> **Windows Credentials**
+> 
+> Under Generic Credentials there are some credentials related to Github, Click on them and click "Remove".
+> 
+> and when you try to push something, you need to login again. hope this will be helpful for you.
 
 # Git
+
 git config --local --list
 git config --global --list
 git config --system --list
+
+## Configure the proxy
+
+### Setting a global proxy
+
+    git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+
+In my PC
+
+    git config --global http.proxy http://127.0.0.1:18081
+   
+### Show current configuration
+
+To show the current configuration of all http sections
+
+    git config --global --get-regexp http.*
+
+### Unset a proxy or SSL verification
+
+Use the `--unset` flag to remove configuration being specific about the property -- for example whether it was `http.proxy` or `http.<url>.proxy`. Consider using any of the following:
+
+    git config --global --unset http.proxy
+    git config --global --unset http.https://domain.com.proxy
+
+    git config --global --unset http.sslVerify
+    git config --global --unset http.https://domain.com.sslVerify
+
+# GitHub Pages
+
+Your site is live at [Visit Site](https://peter-is-be.github.io/earth-why/)
+
+
+# markdown
+
+[Basic Syntax](https://www.markdownguide.org/basic-syntax/)
