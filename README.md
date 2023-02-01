@@ -41,6 +41,16 @@ Edit file `angular.json` add `"baseHref": "/Peter-Wang-WebSite/"` to `projects.P
     ng deploy
  This command will build code and push to github with gh-pages branch. When you installed *angular-cli-ghpages*, `ng deploy` will exec `angular-cli-ghpages:deploy`, see:angular.json `"deploy":{"builder": "angular-cli-ghpages:deploy"}`
 
+    ng deploy --no-silent
+ This command will display more information
+
 ## 4. Setting github pages
 Config github pages to `gh-pages` branch. 
 **Wait a minite** and then visite [Peter-Wang-WebSite](https://solarisy.github.io/Peter-Wang-WebSite) will be find page changed.
+
+
+# About SSH Key
+## Checking for existing SSH keys
+    ls -al ~/.ssh
+## Remove your SSH public/private keys:
+    rm ~/.ssh/id_ed25519*
