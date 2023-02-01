@@ -55,4 +55,3 @@ Config github pages to `gh-pages` branch.
 ## Remove your SSH public/private keys:
     rm ~/.ssh/id_ed25519*
 
-
