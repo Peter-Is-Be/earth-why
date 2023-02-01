@@ -134,7 +134,7 @@
 
   .main-body {
     width: 100%;
-    overflow: auto;
+    min-height: calc(100vh - 64px);
     & * {
       transition: 0.35s;
     }
