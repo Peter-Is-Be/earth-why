@@ -67,4 +67,5 @@ I used to have the same error when i change my user email by git config --global
 
 Under Generic Credentials there are some credentials related to Github, Click on them and click "Remove".
 
-and when you try to push something, you need to login again. hope this will be helpful for you
+and when you try to push something, you need to login again. hope this will be helpful for you.
+
