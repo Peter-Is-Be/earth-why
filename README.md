@@ -55,3 +55,16 @@ Config github pages to `gh-pages` branch.
 ## Remove your SSH public/private keys:
     rm ~/.ssh/id_ed25519*
 
+# Git更换账号问题
+
+当你更换了git用户名和密码，后在VSCode使用git提交到github时发现使用的是原来的用户，这是你需要如下操作来解决此问题：
+
+打开一个文件管理器，右键“此电脑” -> 属性 -> 控制面板主页 (提示：在属性面板的左上角的地方，注意看仔细) -> 用户账户 -> 管理Windows凭据 -> Windows凭据 ，然后相同的界面下方会显示 “普通凭据”，删除多余的那个账号（GitHub账号）凭据。
+
+
+
+I used to have the same error when i change my user email by git config --global user.email and found my solution here: Go to: **Control Panel** -> **User Accounts** -> **Manage your credentials** -> **Windows Credentials**
+
+Under Generic Credentials there are some credentials related to Github, Click on them and click "Remove".
+
+and when you try to push something, you need to login again. hope this will be helpful for you
