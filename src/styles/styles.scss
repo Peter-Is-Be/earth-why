@@ -139,8 +139,8 @@ body {
   img {
     width: 80%;
     max-width: 1600px;
+    max-height: 60vh;
     object-fit: contain;
-    max-height: calc(100vh - 64px - 41px - 64px);
     border-radius: 32px;
     box-shadow: 0 0 16px 0 #000000c9;
     background-color: #060606;

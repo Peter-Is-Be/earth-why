@@ -107,20 +107,20 @@ $md-pink-warn: (
 
 // #region 绿色 color token
 $md-green: (
-  50: #f8fbfb,
-  100: #eef5f5,
-  200: #e3efee,
-  300: #d7e9e7,
-  400: #cfe4e2,
-  500: #c6dfdd,
-  600: #c0dbd9,
-  700: #b9d7d4,
-  800: #b1d2cf,
-  900: #a4cac7,
-  A100: #ffffff,
-  A200: #ffffff,
-  A400: #ffffff,
-  A700: #f5fffe,
+  50: #e9f8f4,
+  100: #c7ede3,
+  200: #a2e2d0,
+  300: #7dd6bd,
+  400: #61cdae,
+  500: #45c4a0,
+  600: #3ebe98,
+  700: #36b68e,
+  800: #2eaf84,
+  900: #1fa273,
+  A100: #dbfff1,
+  A200: #a8ffde,
+  A400: #75ffcb,
+  A700: #5cffc1,
   contrast: (
     50: #000000,
     100: #000000,
@@ -131,7 +131,7 @@ $md-green: (
     600: #000000,
     700: #000000,
     800: #000000,
-    900: #000000,
+    900: #ffffff,
     A100: #000000,
     A200: #000000,
     A400: #000000,
@@ -654,7 +654,7 @@ $menu-underline-color-dark: #ddd;
     .mat-toolbar {
       background-color: mat.get-color-from-palette(
         $app-light-green-primary,
-        100
+        50
       );
     }
     .menu-link.active {
