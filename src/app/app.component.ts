@@ -45,13 +45,16 @@ export class AppComponent {
       });
   }
 
-  pickTheme(themeClass: string) {
+  pickTheme(b900: HTMLDivElement, themeClass: string) {
     this.themeService.setThemeClass(themeClass);
 
     // 设置浏览器的主题颜色
-    const ogColor = document
+    let b900Color = window
+      .getComputedStyle(b900, null)
+      .getPropertyValue("background-color");
+    document
       .querySelector('meta[name="theme-color"]')
-      ?.getAttribute("content");
+      ?.setAttribute("content", b900Color);
   }
 
   setThemeModel(themeModel: string) {

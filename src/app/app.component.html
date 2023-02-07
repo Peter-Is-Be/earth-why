@@ -7,7 +7,7 @@
       <a class="logo" [routerLink]="['']">
         <img src="./assets/image/logo/apple-icon-60x60.png">
       </a>
-      <h1 class="pc">Earth-Why</h1>
+      <h1 class="pc">Earth Why</h1>
       <span class="example-spacer"></span>
       <a mat-button *ngFor="let menu of mainMenuList" routerLink="/{{menu.link}}" class="pc menu-link"
         [ngClass]="{'active':menu.active}"><mat-icon>{{menu.icon}}</mat-icon> {{menu.name}}</a>
@@ -27,31 +27,39 @@
         <mat-icon>format_color_fill</mat-icon>
       </button>
       <mat-menu #colorPicker="matMenu">
-        <button mat-menu-item (click)="pickTheme('app-pink-theme')" [ngClass]="[themeClass,themeClass==='app-pink-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme(b9001,'app-pink-theme')" [ngClass]="[themeClass,themeClass==='app-pink-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-pink">
-            <div class="color-strip"></div>
+            <div class="color-strip">
+              <div class="block-900" #b9001></div>
+            </div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
-        <button mat-menu-item (click)="pickTheme('app-green-theme')" [ngClass]="[themeClass,themeClass==='app-green-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme(b9002,'app-green-theme')" [ngClass]="[themeClass,themeClass==='app-green-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-green">
-            <div class="color-strip"></div>
+            <div class="color-strip">
+              <div class="block-900" #b9002></div>
+            </div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
-        <button mat-menu-item (click)="pickTheme('app-yellow-theme')" [ngClass]="[themeClass,themeClass==='app-yellow-theme'?'color-swatch-btn-checked':'']"
-          class="color-swatch-btn">
+        <button mat-menu-item (click)="pickTheme(b9003,'app-yellow-theme')"
+          [ngClass]="[themeClass,themeClass==='app-yellow-theme'?'color-swatch-btn-checked':'']" class="color-swatch-btn">
           <div class="color-swatch color-swatch-yellow">
-            <div class="color-strip"></div>
+            <div class="color-strip">
+              <div class="block-900" #b9003></div>
+            </div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
-        <button mat-menu-item (click)="pickTheme('app-blue-theme')" [ngClass]="[themeClass,themeClass==='app-blue-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme(b9004,'app-blue-theme')" [ngClass]="[themeClass,themeClass==='app-blue-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-blue">
-            <div class="color-strip"></div>
+            <div class="color-strip">
+              <div class="block-900" #b9004></div>
+            </div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
@@ -63,14 +71,12 @@
   </nav>
   <mat-drawer-container>
     <!-- 移动设备菜单 -->
-    <mat-drawer #drawer class="drawer-sidenav" mode="over" hasBackdrop="true" fixedInViewport="true">
+    <mat-drawer #drawer class="drawer-sidenav" mode="over" hasBackdrop="true" fixedInViewport="true" autoFocus="false">
       <div class="drawer-menu-content">
         <div class="drawer-top">
-          <h1 class="drawer-title">Earth-Why</h1>
-          <a mat-button [routerLink]="['/buddha']" class="menu-link active drawer-item"><mat-icon>temple_buddhist</mat-icon> 佛</a>
-          <a mat-button [routerLink]="['/tao']" class="menu-link drawer-item"><mat-icon>all_inclusive</mat-icon> 道</a>
-          <a mat-button [routerLink]="['/alien']" class="menu-link drawer-item"><mat-icon>outlet</mat-icon> 外星文明</a>
-          <a mat-button [routerLink]="['/earth']" class="menu-link drawer-item"><mat-icon>public</mat-icon> 地球文明</a>
+          <h1 class="drawer-title">Earth Why</h1>
+          <a mat-button *ngFor="let menu of mainMenuList" routerLink="/{{menu.link}}" class="menu-link drawer-item"
+            [ngClass]="{'active':menu.active}"><mat-icon>{{menu.icon}}</mat-icon> {{menu.name}}</a>
         </div>
         <!-- 白天、黑夜模式切换开关 -->
         <span class="example-spacer"></span>
