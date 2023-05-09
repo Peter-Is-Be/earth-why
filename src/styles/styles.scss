@@ -1,16 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "theme.scss";
+@import "theme/theme.scss";
 
 html,
 body {
   height: 100vh;
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +39,7 @@ body {
     background: #d4d4d46e;
   }
 }
+
 .light-model {
   ::-webkit-scrollbar {
     height: 8px; // 水平滚动条的宽
@@ -55,12 +59,14 @@ body {
     background: #3636366e;
   }
 }
+
 /* 滚动条样式 */
 @media (max-width: 960px) {
   .pc {
     display: none !important;
   }
 }
+
 @media (min-width: 960px) {
   .mobile {
     display: none !important;
@@ -73,11 +79,13 @@ body {
   inherits: false;
   initial-value: at left;
 }
+
 @property --c1 {
   syntax: "<color>";
   inherits: false;
   --c1: rgba(255, 86, 34, 0.9);
 }
+
 @property --c2 {
   syntax: "<color>";
   inherits: false;
@@ -131,6 +139,7 @@ body {
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }
@@ -150,16 +159,19 @@ body {
     transition: 0.35s;
     animation: scale-in 0.5s forwards;
   }
+
   @keyframes scale-in {
     from {
       transform: scale(0.9);
       opacity: 0.7;
     }
+
     to {
       transform: scale(1);
       opacity: 1;
     }
   }
+
   .circles {
     position: absolute;
     top: 0;

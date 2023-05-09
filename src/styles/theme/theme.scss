@@ -1,0 +1,10 @@
+// @import url(tokens.scss);
+// @import url(colors.module.scss);
+// @import url(typography.module.scss);
+// @import url(theme.light.scss) (prefers-color-scheme: light);
+// @import url(theme.dark.scss) (prefers-color-scheme: dark);
+@import "tokens.scss";
+@import "colors.module.scss";
+@import "typography.module.scss";
+@import "theme.light.scss";
+@import "theme.dark.scss";

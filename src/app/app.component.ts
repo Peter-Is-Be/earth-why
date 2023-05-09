@@ -1,8 +1,8 @@
-import {Component} from "@angular/core";
-import {NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
-import {environment} from "src/environments/environment";
-import {ThemeService} from "./core/services/theme.service";
+import { Component } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
+import { filter } from "rxjs";
+import { environment } from "src/environments/environment";
+import { ThemeService } from "./core/services/theme.service";
 
 @Component({
   selector: "app-root",
@@ -17,10 +17,12 @@ export class AppComponent {
   showFiller = false;
 
   mainMenuList = [
-    {name: "佛", link: "buddha", icon: "temple_buddhist", active: false},
-    {name: "道", link: "tao", icon: "all_inclusive", active: false},
-    {name: "外星文明", link: "alien", icon: "outlet", active: false},
-    {name: "地球文明", link: "earth", icon: "public", active: false},
+    { name: "Course", link: "course", icon: "menu_book", active: true },
+    { name: "HCT", link: "hct", icon: "home", active: false },
+    { name: "佛", link: "buddha", icon: "temple_buddhist", active: false },
+    { name: "道", link: "tao", icon: "all_inclusive", active: false },
+    { name: "外星文明", link: "alien", icon: "outlet", active: false },
+    { name: "地球文明", link: "earth", icon: "public", active: false },
   ];
   constructor(private themeService: ThemeService, private router: Router) {
     this.themeService.getThemeClass().subscribe((_themeClass: string) => {
@@ -31,27 +33,24 @@ export class AppComponent {
       this.themeModel = _themeModel;
     });
 
-    router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        console.log(event.url);
-        this.mainMenuList.forEach((menu: any) => {
-          if (event.url.includes(menu.link)) {
-            menu.active = true;
-          } else {
-            menu.active = false;
-          }
-        });
+    router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event: any) => {
+      // console.log(event.url);
+      this.mainMenuList.forEach((menu: any) => {
+        if (event.url.includes(menu.link)) {
+          menu.active = true;
+        } else {
+          menu.active = false;
+        }
       });
+    });
+
   }
 
   pickTheme(themeClass: string) {
     this.themeService.setThemeClass(themeClass);
 
     // 设置浏览器的主题颜色
-    const ogColor = document
-      .querySelector('meta[name="theme-color"]')
-      ?.getAttribute("content");
+    const ogColor = document.querySelector('meta[name="theme-color"]')?.getAttribute("content");
   }
 
   setThemeModel(themeModel: string) {

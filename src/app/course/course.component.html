@@ -1,0 +1,44 @@
+<div class="page" [style.background]="hexStr('light','background')">
+    <div class="page-wrap">
+        <div class="top">
+            <div class="wellcom-wrap">
+                <h2 class="title">Hello Peter</h2>
+                <p class="sub-title">Let's learn something new today!</p>
+            </div>
+            <div class="search-wrap">
+                <mat-icon>search</mat-icon>
+                <input class="search-input" placeholder="Search anything here.." type="text" />
+            </div>
+        </div>
+        <div class="cause-banner">
+            <div class="banner-image">
+                <img src="assets/image/course/banner-1.jpg" #bannerImage>
+            </div>
+            <div class="banner-text">
+                <h2 [style.color]="hexStr('light','primaryContainer')">The right choice of language course</h2>
+                <p [style.color]="hexStr('light','primaryContainer')">选择全世界最优秀的语言老师，更能接近本地语言！</p>
+            </div>
+            <div class="banner-action">
+                <button mat-flat-button>View Course</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="title-bar">
+                <h2 class="title">My Course</h2>
+                <p class="sub-title">All courses</p>
+            </div>
+
+            <div class="card-wrap">
+                <div class="card">
+
+                </div>
+                <div class="card">
+
+                </div>
+                <div class="card">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

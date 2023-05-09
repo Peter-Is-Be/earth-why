@@ -1,0 +1,8 @@
+<div class="cc-container" (mouseenter)="show()" (mouseleave)="hide()">
+
+    <button mat-icon-button class="copy-btn" [ngClass]="{'show':_state}" (mouseenter)="showValue()" (mouseleave)="hideValue()" (click)="copy()">
+        <mat-icon>content_copy</mat-icon>
+    </button>
+
+    <div class="color-value" [ngClass]="{'show':_colorValueState}">{{colorValue}}</div>
+</div>

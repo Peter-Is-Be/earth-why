@@ -1,0 +1,257 @@
+<div [style.background]="hexStr('light','background')">
+    <div class="top-bar">
+
+        <div>
+            <table>
+                <tr>
+                    <td>FromSourceColor:</td>
+                    <td><input [(colorPicker)]="fromColor" [style.background]="fromColor" [value]="fromColor" (colorPickerChange)="save()" class="color-picker">
+                    </td>
+                </tr>
+                <tr>
+                    <td>CustomColor:</td>
+                    <td><input [(colorPicker)]="customColor" [style.background]="customColor" [value]="customColor" (colorPickerChange)="save()"
+                            class="color-picker"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="image-pannel">
+            <div>From Image</div>
+            <div class="img-btn" (click)="calcImage($event)"><img src="assets/image/hct/red-1.png"></div>
+            <div class="img-btn" (click)="calcImage($event)"><img src="assets/image/hct/green-1.png"></div>
+            <div class="img-btn" (click)="calcImage($event)"><img src="assets/image/hct/yellow-1.png"></div>
+            <div class="img-btn" (click)="calcImage($event)"><img src="assets/image/hct/blue-1.png"></div>
+        </div>
+    </div>
+
+    <div class="color-mode" [style.background]="hexStr('light','background')">
+        <h2 [style.color]="hexStr('light','onBackground')">Light Scheme</h2>
+        <div class="color-pannel">
+            <div class="color-row primary round-top">
+                <div class="color-item" [style.background]="hexStr('light','primary')" [style.color]="hexStr('light','onPrimary')">
+                    <span class="color-label">Primary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','primary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onPrimary')" [style.color]="hexStr('light','primary')">
+                    <span class="color-label">On Primary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onPrimary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','primaryContainer')" [style.color]="hexStr('light','onPrimaryContainer')">
+                    <span class="color-label"> Primary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','primaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onPrimaryContainer')" [style.color]="hexStr('light','primaryContainer')">
+                    <span class="color-label">On Primary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onPrimaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('light','secondary')" [style.color]="hexStr('light','onSecondary')">
+                    <span class="color-label">Secondary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','secondary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onSecondary')" [style.color]="hexStr('light','secondary')">
+                    <span class="color-label">On Secondary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onSecondary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','secondaryContainer')" [style.color]="hexStr('light','onSecondaryContainer')">
+                    <span class="color-label">Secondary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','secondaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onSecondaryContainer')" [style.color]="hexStr('light','secondaryContainer')">
+                    <span class="color-label">On Secondary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onSecondaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('light','tertiary')" [style.color]="hexStr('light','onTertiary')">
+                    <span class="color-label">Tertiary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','tertiary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onTertiary')" [style.color]="hexStr('light','tertiary')">
+                    <span class="color-label">On Tertiary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onTertiary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','tertiaryContainer')" [style.color]="hexStr('light','onTertiaryContainer')">
+                    <span class="color-label">Tertiary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','tertiaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onTertiaryContainer') " [style.color]="hexStr('light','tertiaryContainer')">
+                    <span class="color-label">On Tertiary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onTertiaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('light','error') " [style.color]="hexStr('light','onError')">
+                    <span class="color-label">Error</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','error')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onError')" [style.color]="hexStr('light','error')">
+                    <span class="color-label"> On Error</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onError')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','errorContainer')" [style.color]="hexStr('light','onErrorContainer')">
+                    <span class="color-label">Error Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','errorContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onErrorContainer')" [style.color]="hexStr('light','errorContainer')">
+                    <span class="color-label">On Error Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onErrorContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('light','background')" [style.color]="hexStr('light','onBackground')">
+                    <span class="color-label">Background</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','background')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onBackground')" [style.color]="hexStr('light','background')">
+                    <span class="color-label">On Background</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onBackground')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','surface')" [style.color]="hexStr('light','onSurface')">
+                    <span class="color-label">Surface</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','surface')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onSurface')" [style.color]="hexStr('light','surface')">
+                    <span class="color-label"> On Surface</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onSurface')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row round-bottom">
+                <div class="color-item-2x" [style.background]="hexStr('light','outline')" [style.color]="hexStr('light','outlineVariant')">
+                    <span class="color-label">Outline</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','outline')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','surfaceVariant')" [style.color]="hexStr('light','onSurfaceVariant')">
+                    <span class="color-label">Surface-Variant</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','surfaceVariant')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('light','onSurfaceVariant')" [style.color]="hexStr('light','surfaceVariant')">
+                    <span class="color-label">On Surface-Variant</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('light','onSurfaceVariant')"></app-color-copy>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="color-mode" [style.background]="hexStr('dark','background')">
+        <h2 [style.color]="hexStr('dark','onBackground')">Dark Scheme</h2>
+        <div class="color-pannel">
+            <div class="color-row primary round-top">
+                <div class="color-item" [style.background]="hexStr('dark','primary')" [style.color]="hexStr('dark','onPrimary')">
+                    <span class="color-label">Primary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','primary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onPrimary')" [style.color]="hexStr('dark','primary')">
+                    <span class="color-label">On Primary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onPrimary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','primaryContainer')" [style.color]="hexStr('dark','onPrimaryContainer')">
+                    <span class="color-label"> Primary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','primaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onPrimaryContainer')" [style.color]="hexStr('dark','primaryContainer')">
+                    <span class="color-label">On Primary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onPrimaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('dark','secondary')" [style.color]="hexStr('dark','onSecondary')">
+                    <span class="color-label">Secondary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','secondary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onSecondary')" [style.color]="hexStr('dark','secondary')">
+                    <span class="color-label">On Secondary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onSecondary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','secondaryContainer')" [style.color]="hexStr('dark','onSecondaryContainer')">
+                    <span class="color-label">Secondary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','secondaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onSecondaryContainer')" [style.color]="hexStr('dark','secondaryContainer')">
+                    <span class="color-label">On Secondary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onSecondaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('dark','tertiary')" [style.color]="hexStr('dark','onTertiary')">
+                    <span class="color-label">Tertiary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','tertiary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onTertiary')" [style.color]="hexStr('dark','tertiary')">
+                    <span class="color-label">On Tertiary</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onTertiary')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','tertiaryContainer')" [style.color]="hexStr('dark','onTertiaryContainer')">
+                    <span class="color-label">Tertiary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','tertiaryContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onTertiaryContainer') " [style.color]="hexStr('dark','tertiaryContainer')">
+                    <span class="color-label">On Tertiary Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onTertiaryContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('dark','error') " [style.color]="hexStr('dark','onError')">
+                    <span class="color-label">Error</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','error')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onError')" [style.color]="hexStr('dark','error')">
+                    <span class="color-label"> On Error</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onError')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','errorContainer')" [style.color]="hexStr('dark','onErrorContainer')">
+                    <span class="color-label">Error Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','errorContainer')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onErrorContainer')" [style.color]="hexStr('dark','errorContainer')">
+                    <span class="color-label">On Error Container</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onErrorContainer')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row">
+                <div class="color-item" [style.background]="hexStr('dark','background')" [style.color]="hexStr('dark','onBackground')">
+                    <span class="color-label">Background</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','background')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onBackground')" [style.color]="hexStr('dark','background')">
+                    <span class="color-label">On Background</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onBackground')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','surface')" [style.color]="hexStr('dark','onSurface')">
+                    <span class="color-label">Surface</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','surface')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onSurface')" [style.color]="hexStr('dark','surface')">
+                    <span class="color-label"> On Surface</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onSurface')"></app-color-copy>
+                </div>
+            </div>
+            <div class="color-row round-bottom">
+                <div class="color-item-2x" [style.background]="hexStr('dark','outline')" [style.color]="hexStr('dark','outlineVariant')">
+                    <span class="color-label">Outline</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','outline')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','surfaceVariant')" [style.color]="hexStr('dark','onSurfaceVariant')">
+                    <span class="color-label">Surface-Variant</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','surfaceVariant')"></app-color-copy>
+                </div>
+                <div class="color-item" [style.background]="hexStr('dark','onSurfaceVariant')" [style.color]="hexStr('dark','surfaceVariant')">
+                    <span class="color-label">On Surface-Variant</span>
+                    <app-color-copy class="color-label" [colorValue]="hexStr('dark','onSurfaceVariant')"></app-color-copy>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Tonal palettes</h2>
+    <div class="color-pannel">
+
+    </div>
+
+    <h2>property</h2>
+    <div *ngFor="let property of theme.schemes.light.props | keyvalue" class="list-item">
+        {{property.key}}: [{{theme.schemes.light.props[''+property.key]}}] - {{hexStr('light',property.key+'')}}
+        <div [style.background]="hexStr('light',property.key+'')" class="color-block"></div>
+    </div>
+</div>

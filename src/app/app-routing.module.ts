@@ -1,8 +1,10 @@
-import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
-  {path: "", redirectTo: "alien", pathMatch: "full"},
+  { path: "", redirectTo: "course", pathMatch: "full" },
+  { path: 'course', loadChildren: () => import('./course/course.module').then(m => m.CourseModule) },
+  { path: 'hct', loadChildren: () => import('./hct/hct.module').then(m => m.HctModule) },
   {
     path: "demo-pages",
     loadChildren: () =>
@@ -33,4 +35,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
