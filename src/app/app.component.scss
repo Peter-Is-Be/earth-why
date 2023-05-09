@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "@angular/material" as mat;
 @import "../styles/theme.scss";
 @import "../styles/constants.scss";
@@ -175,14 +176,39 @@
     align-items: center;
     justify-content: flex-start;
     .color-strip {
-      width: 72px;
-      height: 18px;
+      width: 80px;
+      height: 24px;
       margin-right: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 3px;
+      .block-900 {
+        width: 16px;
+        height: 16px;
+        margin-left: 4px;
+        border-radius: 50%;
+      }
     }
 
     &.color-swatch-green {
       .color-strip {
         background-color: mat.get-color-from-palette($app-light-green-primary);
+        .block-900 {
+          background-color: mat.get-color-from-palette(
+            $app-light-green-primary,
+            900
+          );
+          border: 1px solid
+            mat.get-color-from-palette($app-light-green-primary, 900);
+
+          box-shadow: inset 1px 1px 1px 0px
+            color.adjust(
+              mat.get-color-from-palette($app-light-green-primary, 900),
+              $lightness: -10%
+            );
+        }
       }
       .color-swatch-icon {
         color: mat.get-color-from-palette($app-light-green-accent);
@@ -192,6 +218,20 @@
     &.color-swatch-pink {
       .color-strip {
         background-color: mat.get-color-from-palette($app-light-pink-primary);
+        .block-900 {
+          background-color: mat.get-color-from-palette(
+            $app-light-pink-primary,
+            900
+          );
+          border: 1px solid
+            mat.get-color-from-palette($app-light-pink-primary, 900);
+
+          box-shadow: inset 1px 1px 1px 0px
+            color.adjust(
+              mat.get-color-from-palette($app-light-pink-primary, 900),
+              $lightness: -10%
+            );
+        }
       }
       .color-swatch-icon {
         color: mat.get-color-from-palette($app-light-pink-accent);
@@ -201,6 +241,20 @@
     &.color-swatch-blue {
       .color-strip {
         background-color: mat.get-color-from-palette($app-light-blue-primary);
+        .block-900 {
+          background-color: mat.get-color-from-palette(
+            $app-light-blue-primary,
+            900
+          );
+          border: 1px solid
+            mat.get-color-from-palette($app-light-blue-primary, 900);
+
+          box-shadow: inset 1px 1px 1px 0px
+            color.adjust(
+              mat.get-color-from-palette($app-light-blue-primary, 900),
+              $lightness: -10%
+            );
+        }
       }
       .color-swatch-icon {
         color: mat.get-color-from-palette($app-light-blue-accent);
@@ -210,6 +264,20 @@
     &.color-swatch-yellow {
       .color-strip {
         background-color: mat.get-color-from-palette($app-light-yellow-primary);
+        .block-900 {
+          background-color: mat.get-color-from-palette(
+            $app-light-yellow-primary,
+            900
+          );
+          border: 1px solid
+            mat.get-color-from-palette($app-light-yellow-primary, 900);
+
+          box-shadow: inset 1px 1px 1px 0px
+            color.adjust(
+              mat.get-color-from-palette($app-light-yellow-primary, 900),
+              $lightness: -10%
+            );
+        }
       }
       .color-swatch-icon {
         color: mat.get-color-from-palette($app-light-yellow-accent);

@@ -50,7 +50,12 @@ export class AppComponent {
     this.themeService.setThemeClass(themeClass);
 
     // 设置浏览器的主题颜色
-    const ogColor = document.querySelector('meta[name="theme-color"]')?.getAttribute("content");
+    let b900Color = window
+      .getComputedStyle(b900, null)
+      .getPropertyValue("background-color");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", b900Color);
   }
 
   setThemeModel(themeModel: string) {

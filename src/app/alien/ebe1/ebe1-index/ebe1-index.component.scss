@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: flex-end;
   .close-btn {
-    background-color: rgb(128 128 128 / 20%);
+    background-color: rgb(159 159 159);
   }
 }
 
@@ -90,6 +90,14 @@
 
   .KaiTi {
     font-family: "楷体";
+  }
+
+  .flex-center,
+  .content p a:has(img) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }
 
