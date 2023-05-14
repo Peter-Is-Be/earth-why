@@ -13,13 +13,14 @@
         <div class="cause-banner">
             <div class="banner-image">
                 <img src="assets/image/course/banner-1.jpg" #bannerImage>
+                <input style="display: none;" type="file" accept="image/*" (change)="imageChoosed($event)" #imageInput>
             </div>
             <div class="banner-text">
                 <h2 [style.color]="hexStr('light','primaryContainer')">The right choice of language course</h2>
                 <p [style.color]="hexStr('light','primaryContainer')">选择全世界最优秀的语言老师，更能接近本地语言！</p>
             </div>
             <div class="banner-action">
-                <button mat-flat-button>View Course</button>
+                <button mat-flat-button (click)="chooseImage()">更换图片</button>
             </div>
         </div>
         <div class="bottom">
@@ -29,13 +30,39 @@
             </div>
 
             <div class="card-wrap">
-                <div class="card">
+                <div class="card" [style.background]="hexStr('light','tertiaryContainer')">
+                    <div class="card-banner">
+                        <img src="assets/image/course/banner-1.jpg">
+                    </div>
+                    <div class="card-row card-title-bar">
+                        <div class="title-bar">
+                            <h4 clas="title">课程名称</h4>
+                            <p class="sub-title">24课时，从小白到大师</p>
+                        </div>
+                        <div clas="card-user"><mat-icon>account_circle</mat-icon></div>
+                    </div>
+                    <div class="card-row icon-badge-bar">
+                        <div class="icon-badge"><mat-icon>format_list_bulleted</mat-icon><span>24</span></div>
+                        <div class="icon-badge"><mat-icon>verified_user</mat-icon><span>18</span></div>
+                        <div class="icon-badge"><mat-icon>people</mat-icon><span>236</span></div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="progress-info">
+                            <div>已完成: 25%</div>
+                            <div>23天</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" [style.background]="hexStr('light','tertiaryContainer')">
 
                 </div>
-                <div class="card">
+                <div class="card" [style.background]="hexStr('light','tertiaryContainer')">
 
                 </div>
-                <div class="card">
+                <div class="card" [style.background]="hexStr('light','tertiaryContainer')">
 
                 </div>
             </div>

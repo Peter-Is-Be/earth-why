@@ -27,14 +27,14 @@
         <mat-icon>format_color_fill</mat-icon>
       </button>
       <mat-menu #colorPicker="matMenu">
-        <button mat-menu-item (click)="pickTheme(b9001,'app-pink-theme')" [ngClass]="[themeClass,themeClass==='app-pink-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme('app-pink-theme')" [ngClass]="[themeClass,themeClass==='app-pink-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-pink">
             <div class="color-strip"></div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
-        <button mat-menu-item (click)="pickTheme(b9002,'app-green-theme')" [ngClass]="[themeClass,themeClass==='app-green-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme('app-green-theme')" [ngClass]="[themeClass,themeClass==='app-green-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-green">
             <div class="color-strip"></div>
@@ -48,12 +48,10 @@
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
-        <button mat-menu-item (click)="pickTheme(b9004,'app-blue-theme')" [ngClass]="[themeClass,themeClass==='app-blue-theme'?'color-swatch-btn-checked':'']"
+        <button mat-menu-item (click)="pickTheme('app-blue-theme')" [ngClass]="[themeClass,themeClass==='app-blue-theme'?'color-swatch-btn-checked':'']"
           class="color-swatch-btn">
           <div class="color-swatch color-swatch-blue">
-            <div class="color-strip">
-              <div class="block-900" #b9004></div>
-            </div>
+            <div class="color-strip"></div>
             <mat-icon class="color-swatch-icon">check_circle</mat-icon>
           </div>
         </button>
@@ -65,7 +63,7 @@
   </nav>
   <mat-drawer-container>
     <!-- 移动设备菜单 -->
-    <mat-drawer #drawer class="drawer-sidenav" mode="over" hasBackdrop="true" fixedInViewport="true" autoFocus="false">
+    <mat-drawer #drawer class="drawer-sidenav" mode="over" hasBackdrop="true" fixedInViewport="true">
       <div class="drawer-menu-content">
         <div class="drawer-top">
           <h1 class="drawer-title">Earth-Why</h1>
